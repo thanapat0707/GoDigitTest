@@ -1,0 +1,29 @@
+<div class="container table-header">
+	<div class="row">
+		<div class="col-md-12">
+			<nz-table #partTable [nzData]="PartNumberData" [nzBordered]="true">
+				<thead>
+					<tr class="table-header">
+						<th>ID</th>
+						<th>FirstName</th>
+						<th>LastName</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody *ngFor="let data of partTable.data">
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><button class="btn btn-success">Detail</button></td>
+						<td><button class="btn btn-primary">Edit</button></td>
+					</tr>
+				</tbody>
+			</nz-table>
+			<br>
+		</div>
+	</div>
+</div>
+
+

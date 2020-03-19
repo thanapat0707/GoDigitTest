@@ -1,0 +1,12 @@
+.delete {
+    margin: 0 10px;
+}
+
+.required:before {
+    color: red;
+    content: ' * ';
+}
+
+.alert {
+    line-height: 10px;
+}

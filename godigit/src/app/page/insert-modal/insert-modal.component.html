@@ -1,0 +1,47 @@
+<div class="container" [ngSwitch]="SQL">
+	<div class="modal-header">
+		<h4 *ngSwitchCase="'insert'" class="modal-title">Insert Customer</h4>
+		<h4 *ngSwitchCase="'update'" class="modal-title">Update Customer</h4>
+		<button class="btn btn-danger delete" *ngSwitchCase="'update'" (click)="Delete( ibCustomerID )">Delete</button>
+	</div>
+	<div class="modal-body">
+		<form #CustomerForm="ngForm">
+			<div class="form-group row" *ngSwitchCase="'update'">
+				<label for="customer" class="col-sm-5 col-form-label">Customer ID :</label>
+				<div class="col-sm-6">
+					<input [disabled]="SQL=='update'" id="customer" name="customer" [(ngModel)]="ibCustomerID" type="text"
+						   class="form-control">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="firstName" class="col-sm-5 col-form-label required">FirstName :</label>
+				<div class="col-sm-6">
+					<input id="firstName" name="firstName" [(ngModel)]="ibFirstName" type="text" class="form-control"
+						   required (click)="closeAlert()">
+					<div *ngIf="alert" class="alert alert-danger">
+						Duplicate FirstName
+					</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="lastName" class="col-sm-5 col-form-label required">LastName :</label>
+				<div class="col-sm-6">
+					<input id="lastName" name="lastName" [(ngModel)]="ibLastName" type="text" class="form-control" required>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="telno" class="col-sm-5 col-form-label">Telephone number :</label>
+				<div class="col-sm-6">
+					<input id="telno" name="telno" [(ngModel)]="ibTelno" type="text" class="form-control">
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button *ngSwitchCase="'insert'" [disabled]="!CustomerForm.form.valid" (click)="Insert()" type="submit"
+				class="btn btn-primary w-25">Insert
+		</button>
+		<button *ngSwitchCase="'update'" (click)="Update()" type="submit" class="btn btn-primary w-25">Update</button>
+		<button (click)="activeModal.close()" type="submit" class="btn btn-secondary w-25">Cancel</button>
+	</div>
+</div>

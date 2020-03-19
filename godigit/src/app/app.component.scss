@@ -1,0 +1,38 @@
+::ng-deep aside {
+    z-index: 0;
+    width: 400px;
+    background: whitesmoke;
+
+    .back-logo {
+        background-color: black;
+        padding: 30px;
+        outline: none;
+        cursor: pointer;
+
+        h1 {
+            font-weight: bold;
+            text-align: center;
+            font-size: 50px;
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
+
+::ng-deep ng-sidebar-container {
+    z-index: 0;
+}
+
+.content {
+    margin: 10px;
+}
+
+.customer-navbar {
+    color: white;
+    font-size: 24px;
+    margin-top: 6px;
+
+    i {
+        padding-right: 10px;
+    }
+}

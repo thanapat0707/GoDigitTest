@@ -1,0 +1,30 @@
+<ng-sidebar-container>
+	<!-- sidebar -->
+	<ng-sidebar [(opened)]="opened"
+				position="left"
+				mode="push"
+				dock="true"
+				dockedSize="90px">
+
+		<div class="back-logo" routerLink="/main" routerLinkActive="active">
+			<h1>Go Digit</h1>
+			<h1>TEST</h1>
+		</div>
+
+
+	</ng-sidebar>
+
+	<!-- Page content -->
+	<div ng-sidebar-content>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<h1 class="customer-navbar" ><i class="fa fa-user"></i>Customer Management</h1>
+		</nav>
+		<div class="content">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</ng-sidebar-container>
+
+
+
+

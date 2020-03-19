@@ -1,0 +1,19 @@
+<section>
+	<div class="container">
+		<!--		<button class="btn btn-outline-primary" (click)="partDetail(content, {})">Modal</button>-->
+		<div class="text">
+			<h1>This Angular was created for some test.</h1>
+			<button class="btn btn-outline-primary" routerLink="/find" routerLinkActive="active">Go to main</button>
+		</div>
+	</div>
+</section>
+<!-- Modal -->
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Part</h4>
+	</div>
+	<div class="modal-body">
+		TEST
+	</div>
+</ng-template>
+
